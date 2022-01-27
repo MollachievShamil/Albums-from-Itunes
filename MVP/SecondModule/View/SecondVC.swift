@@ -11,22 +11,22 @@ class SecondVC: UIViewController {
 
     var presenter: SecondPresenterProtocol!
     
-    let button1: UIButton = {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        createButton()
+        view.backgroundColor = .blue
+    }
+   
+    func createButton() -> UIButton {
         let button = UIButton()
         button.backgroundColor = .black
         button.setTitle("dfdfd", for: .normal)
         button.addTarget(self, action: #selector(popToRoot), for: .touchUpInside)
+        view.addSubview(button)
+        button.frame = CGRect(x: 200, y: 100, width: 100, height: 100)
         return button
-    }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .blue
-        view.addSubview(button1)
-        button1.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
     }
-
 
     @objc func popToRoot(){
         presenter.popToRoot()

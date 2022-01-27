@@ -17,6 +17,7 @@
 		B3D69AA527A28BEB00F4ED05 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69AA427A28BEB00F4ED05 /* SecondVC.swift */; };
 		B3D69AA727A28C1A00F4ED05 /* SecondVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69AA627A28C1A00F4ED05 /* SecondVCPresenter.swift */; };
 		B3D69AAC27A28D1E00F4ED05 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69AAB27A28D1E00F4ED05 /* Router.swift */; };
+		B3D69AAE27A29A2200F4ED05 /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69AAD27A29A2200F4ED05 /* StackView + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B3D69AA427A28BEB00F4ED05 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		B3D69AA627A28C1A00F4ED05 /* SecondVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVCPresenter.swift; sourceTree = "<group>"; };
 		B3D69AAB27A28D1E00F4ED05 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		B3D69AAD27A29A2200F4ED05 /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		B3D69A7D27A279BB00F4ED05 = {
 			isa = PBXGroup;
 			children = (
+				B3D69AAD27A29A2200F4ED05 /* StackView + Extension.swift */,
 				B3D69A8827A279BB00F4ED05 /* MVP */,
 				B3D69A8727A279BB00F4ED05 /* Products */,
 			);
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3D69AAE27A29A2200F4ED05 /* StackView + Extension.swift in Sources */,
 				B3D69AAC27A28D1E00F4ED05 /* Router.swift in Sources */,
 				B3D69A8E27A279BB00F4ED05 /* FirstVC.swift in Sources */,
 				B3D69AA327A2825F00F4ED05 /* Assembly.swift in Sources */,

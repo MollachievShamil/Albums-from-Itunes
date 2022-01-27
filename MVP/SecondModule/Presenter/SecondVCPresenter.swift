@@ -29,7 +29,6 @@ class SecondPresenter: SecondPresenterProtocol {
     }
     
     func presenterDoSomething() {
-        
         view.viewDoSomething()
     }
     
