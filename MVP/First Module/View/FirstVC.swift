@@ -11,23 +11,35 @@ class FirstVC: UIViewController {
 
     var presenter: FirstPresenterProtocol!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-       // view.backgroundColor = .green
         setupViews()
         setConstraints()
         setupDelegate()
         registerKeyboardNotification()
-        
     }
-    func setupDelegate() {
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-    }
+    
+    
+
+    //MARK: - SignUpButton
+    
     @objc func signUpButtonTapped() {
         presenter.tapOnGoToSecondVC()
     }
+    
+    //MARK: - signInButton
+    @objc func signInButtonTapped() {
+        let mail = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        presenter.checkUser(mail: mail, password: password)
+    }
+    
+   
+    //MARK: - Deinit
+    deinit {
+        removeKeyboardNotification()
+    }
+   
     
     //MARK: - init UI elements
     let scrollView: UIScrollView = {
@@ -82,14 +94,13 @@ class FirstVC: UIViewController {
         button.setTitle("SignIN", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10
-       // button.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     var textFieldsStackView = UIStackView()
     var buttonsStackView = UIStackView()
-
 
 
     //MARK: - Setup Views
@@ -115,7 +126,58 @@ class FirstVC: UIViewController {
         backgroundView.addSubview(buttonsStackView)
     }
     
+}
     
+
+//MARK: - TextField Delegate
+
+extension FirstVC: UITextFieldDelegate {
+  
+    func setupDelegate() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return true
+    }
+}
+
+    //MARK: - Keyboard Notification
+extension FirstVC {
+    
+    func registerKeyboardNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    func removeKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        let userInfo = notification.userInfo
+        let keyboardHight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        scrollView.contentOffset = CGPoint(x: 0, y: keyboardHight.height / 2)
+    }
+    
+    @objc func keyboardWillHide() {
+        scrollView.contentOffset = .zero
+    }
+    
+    
+}
+
+//MARK: - Constraints
+
+extension FirstVC {
     func setConstraints() {
         
         NSLayoutConstraint.activate([
@@ -155,56 +217,14 @@ class FirstVC: UIViewController {
             buttonsStackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20),
         ])
     }
-
-
-
-    func somethingHappend() {
-        presenter.presenterDoSomething()
-    }
 }
 
 extension FirstVC: FirstViewProtocol {
-    func viewDoSomething() {
-        //do something
+    func setPlaceholders(login: String) {
+        loginLabel.text = login
     }
+    
+    
+    
     
 }
-
-extension FirstVC: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
-        return true
-    }
-}
-
-    
-extension FirstVC {
-    
-    func registerKeyboardNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
-    }
-    
-    func removeKeyboardNotification() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func keyboardWillShow(notification: Notification) {
-        let userInfo = notification.userInfo
-        let keyboardHight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        scrollView.contentOffset = CGPoint(x: 0, y: keyboardHight.height / 2)
-    }
-    
-    @objc func keyboardWillHide() {
-        scrollView.contentOffset = .zero
-    }
-}
-

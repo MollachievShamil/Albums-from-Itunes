@@ -18,6 +18,7 @@
 		B3D69AA727A28C1A00F4ED05 /* SecondVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69AA627A28C1A00F4ED05 /* SecondVCPresenter.swift */; };
 		B3D69AAC27A28D1E00F4ED05 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69AAB27A28D1E00F4ED05 /* Router.swift */; };
 		B3D69AAE27A29A2200F4ED05 /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69AAD27A29A2200F4ED05 /* StackView + Extension.swift */; };
+		B3D69AB027A2A01D00F4ED05 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69AAF27A2A01D00F4ED05 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B3D69AA627A28C1A00F4ED05 /* SecondVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVCPresenter.swift; sourceTree = "<group>"; };
 		B3D69AAB27A28D1E00F4ED05 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B3D69AAD27A29A2200F4ED05 /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
+		B3D69AAF27A2A01D00F4ED05 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		B3D69AA127A2821200F4ED05 /* First Module */ = {
 			isa = PBXGroup;
 			children = (
+				B3D69AB127A2A02E00F4ED05 /* Model */,
 				B3D69AA027A2820200F4ED05 /* Presenter */,
 				B3D69A9F27A281FB00F4ED05 /* View */,
 			);
@@ -128,6 +131,14 @@
 				B3D69AA827A28C7E00F4ED05 /* View */,
 			);
 			path = SecondModule;
+			sourceTree = "<group>";
+		};
+		B3D69AB127A2A02E00F4ED05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3D69AAF27A2A01D00F4ED05 /* UserModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +219,7 @@
 				B3D69A8A27A279BB00F4ED05 /* AppDelegate.swift in Sources */,
 				B3D69A9E27A279EE00F4ED05 /* FirstVCPresenter.swift in Sources */,
 				B3D69AA527A28BEB00F4ED05 /* SecondVC.swift in Sources */,
+				B3D69AB027A2A01D00F4ED05 /* UserModel.swift in Sources */,
 				B3D69A8C27A279BB00F4ED05 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
