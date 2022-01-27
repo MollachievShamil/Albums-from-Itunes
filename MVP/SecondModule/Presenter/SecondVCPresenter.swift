@@ -7,37 +7,49 @@
 
 import Foundation
 
-protocol SecondViewProtocol {
-    func viewDoSomething()
+protocol SecondViewProtocol: AnyObject {
+    func showResultOfRegistration(text: String)
+    func showAlert()
 }
 
-protocol SecondPresenterProtocol{
+protocol SecondPresenterProtocol: AnyObject {
     init(view: SecondViewProtocol, router: RouterProtocol)
-    func presenterDoSomething()
-    func popToRoot()
+    func singUpTapped(firstNameText: String, secondNameText: String, emailText: String, passwordText: String, phoneText: String)
+   
 }
-
 
 class SecondPresenter: SecondPresenterProtocol {
     
-    let view: SecondViewProtocol
-    let router: RouterProtocol
+    weak var view: SecondViewProtocol?
+    let router: RouterProtocol?
     
     required init(view: SecondViewProtocol, router: RouterProtocol) {
         self.view = view
         self.router = router
     }
     
-    func presenterDoSomething() {
-        view.viewDoSomething()
+    let nameValidType: String.ValidTypes = .name
+    let emailValidType: String.ValidTypes = .email
+    let passwordValidType: String.ValidTypes = .password
+   
+    func singUpTapped(firstNameText: String, secondNameText: String, emailText: String, passwordText: String, phoneText: String){
+        
+        if firstNameText.isValid(validType: nameValidType)
+            && secondNameText.isValid(validType: nameValidType)
+            && emailText.isValid(validType: emailValidType)
+            && passwordText.isValid(validType: passwordValidType)
+            && phoneText.count == 18 {
+            
+            // add in data base
+            view?.showResultOfRegistration(text: "Registration complite")
+            
+            print("+")
+        } else {
+            view?.showAlert()
+        }
+        
     }
+ 
     
-    
-    func popToRoot() {
-        router.popToRoot()
-    }
-    
-    
-    
-    
+
 }

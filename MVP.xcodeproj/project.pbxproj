@@ -19,6 +19,8 @@
 		B3D69AAC27A28D1E00F4ED05 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69AAB27A28D1E00F4ED05 /* Router.swift */; };
 		B3D69AAE27A29A2200F4ED05 /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69AAD27A29A2200F4ED05 /* StackView + Extension.swift */; };
 		B3D69AB027A2A01D00F4ED05 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69AAF27A2A01D00F4ED05 /* UserModel.swift */; };
+		B3D69AB327A2AE7100F4ED05 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69AB227A2AE7100F4ED05 /* String + Extension.swift */; };
+		B3D69AB527A2B1F800F4ED05 /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D69AB427A2B1F800F4ED05 /* AlertOk.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		B3D69AAB27A28D1E00F4ED05 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B3D69AAD27A29A2200F4ED05 /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
 		B3D69AAF27A2A01D00F4ED05 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		B3D69AB227A2AE7100F4ED05 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		B3D69AB427A2B1F800F4ED05 /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,8 @@
 		B3D69A7D27A279BB00F4ED05 = {
 			isa = PBXGroup;
 			children = (
+				B3D69AB427A2B1F800F4ED05 /* AlertOk.swift */,
+				B3D69AB227A2AE7100F4ED05 /* String + Extension.swift */,
 				B3D69AAD27A29A2200F4ED05 /* StackView + Extension.swift */,
 				B3D69A8827A279BB00F4ED05 /* MVP */,
 				B3D69A8727A279BB00F4ED05 /* Products */,
@@ -218,8 +224,10 @@
 				B3D69AA727A28C1A00F4ED05 /* SecondVCPresenter.swift in Sources */,
 				B3D69A8A27A279BB00F4ED05 /* AppDelegate.swift in Sources */,
 				B3D69A9E27A279EE00F4ED05 /* FirstVCPresenter.swift in Sources */,
+				B3D69AB327A2AE7100F4ED05 /* String + Extension.swift in Sources */,
 				B3D69AA527A28BEB00F4ED05 /* SecondVC.swift in Sources */,
 				B3D69AB027A2A01D00F4ED05 /* UserModel.swift in Sources */,
+				B3D69AB527A2B1F800F4ED05 /* AlertOk.swift in Sources */,
 				B3D69A8C27A279BB00F4ED05 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

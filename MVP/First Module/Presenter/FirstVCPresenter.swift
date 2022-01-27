@@ -24,7 +24,7 @@ class FirstPresenter: FirstPresenterProtocol {
     
     weak var view: FirstViewProtocol?
     let router: RouterProtocol?
-    let user1 = User(firstName: "1", secondName: "1", phone: "1", email: "1", password: "1")
+    let user1 = User(firstName: "1", secondName: "1", phone: "1", email: "1", password: "1", age: "1")
     var users = [User]()
     
     required init(view: FirstViewProtocol, router: RouterProtocol) {

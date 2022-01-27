@@ -223,8 +223,5 @@ extension FirstVC: FirstViewProtocol {
     func setPlaceholders(login: String) {
         loginLabel.text = login
     }
-    
-    
-    
-    
+
 }
