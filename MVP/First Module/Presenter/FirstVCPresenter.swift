@@ -15,7 +15,7 @@ protocol FirstViewProtocol: AnyObject {
 protocol FirstPresenterProtocol: AnyObject{
     init(view: FirstViewProtocol, router: RouterProtocol)
     func checkUser(mail: String?, password: String?)
-    func tapOnGoToSecondVC()
+    func goToRegistrationVC()
 }
 
 
@@ -38,30 +38,17 @@ class FirstPresenter: FirstPresenterProtocol {
 
         for user in users{
             if user.email == mail && user.password == password{
-                view?.setPlaceholders(login: "ok")
+                view?.setPlaceholders(login: "Ok")
             } else if user.email == mail && user.password != password{
-                view?.setPlaceholders(login: "wrong password")
+                view?.setPlaceholders(login: "Wrong password")
             } else {
-                view?.setPlaceholders(login: "not found")
+                view?.setPlaceholders(login: "User not found")
             }
-
-//        if user == nil {
-//            loginLabel.text = "user not found"
-//            loginLabel.textColor = .red
-//        } else if user?.password == password {
-//            let navVC = UINavigationController(rootViewController: AlbumsViewController())
-//            navVC.modalPresentationStyle = .fullScreen
-//
-//            guard let activeUser = user else { return }
-//            DataBase.shared.saveActiveUser(user: activeUser)
-//            self.present(navVC, animated: true)
-//        } else {
-//            loginLabel.text = "Wrong password"
-//            loginLabel.textColor = .red
-//        }
     }
     }
-    func tapOnGoToSecondVC() {
+    
+    
+    func goToRegistrarionVC() {
         router?.secondVC()
     }
     

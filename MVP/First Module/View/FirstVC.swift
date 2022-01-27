@@ -24,7 +24,7 @@ class FirstVC: UIViewController {
     //MARK: - SignUpButton
     
     @objc func signUpButtonTapped() {
-        presenter.tapOnGoToSecondVC()
+        presenter.goToRegistrationVC()
     }
     
     //MARK: - signInButton
@@ -54,7 +54,7 @@ class FirstVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
+    
     let loginLabel: UILabel = {
         let label = UILabel()
         label.text = "LogIn"
@@ -79,7 +79,7 @@ class FirstVC: UIViewController {
 
     let signUpButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
+        button.backgroundColor = .gray
         button.setTitle("SignUP", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10
@@ -90,7 +90,7 @@ class FirstVC: UIViewController {
 
     let signInButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = .black
+        button.backgroundColor = .brown
         button.setTitle("SignIN", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10

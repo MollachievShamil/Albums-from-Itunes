@@ -56,9 +56,7 @@
 		B3D69A7D27A279BB00F4ED05 = {
 			isa = PBXGroup;
 			children = (
-				B3D69AB427A2B1F800F4ED05 /* AlertOk.swift */,
-				B3D69AB227A2AE7100F4ED05 /* String + Extension.swift */,
-				B3D69AAD27A29A2200F4ED05 /* StackView + Extension.swift */,
+				B3D69AB627A2B37600F4ED05 /* Extensions */,
 				B3D69A8827A279BB00F4ED05 /* MVP */,
 				B3D69A8727A279BB00F4ED05 /* Products */,
 			);
@@ -145,6 +143,16 @@
 				B3D69AAF27A2A01D00F4ED05 /* UserModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B3D69AB627A2B37600F4ED05 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B3D69AB227A2AE7100F4ED05 /* String + Extension.swift */,
+				B3D69AB427A2B1F800F4ED05 /* AlertOk.swift */,
+				B3D69AAD27A29A2200F4ED05 /* StackView + Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

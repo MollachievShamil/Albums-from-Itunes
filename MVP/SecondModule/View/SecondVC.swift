@@ -162,6 +162,8 @@ class SecondVC: UIViewController {
         
     }
 
+ 
+
 //MARK: -  Setup Constraints
 private func setupViews() {
     title = "SignUp"
@@ -255,6 +257,52 @@ extension SecondVC: UITextFieldDelegate {
         passwordTextField.resignFirstResponder()
         return true
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        switch textField {
+        case firstNameTextField: presenter.setTextFieald(textField: firstNameTextField,
+                                               label: firstNameValidLabel,
+                                               validType: nameValidType,
+                                               validMassege: "Name is valid",
+                                               wrongMassege: "Only A-Z charcters and min 1 charcter",
+                                               string: string,
+                                               range: range)
+            
+        case secondNameTextField: presenter.setTextFieald(textField: secondNameTextField,
+                                               label: secondNameValidLabel,
+                                               validType: nameValidType,
+                                               validMassege: "Name is valid",
+                                               wrongMassege: "Only A-Z charcters and min 1 charcter",
+                                               string: string,
+                                               range: range)
+        
+        case emailTextField: presenter.setTextFieald(textField: emailTextField,
+                                               label: emailValidLabel,
+                                               validType: emailValidType,
+                                               validMassege: "email is valid",
+                                               wrongMassege: "email is not valid. Example: dog@dog.com",
+                                               string: string,
+                                               range: range)
+            
+        case passwordTextField: presenter.setTextFieald(textField: passwordTextField,
+                                               label: passwordValidLabel,
+                                               validType: passwordValidType,
+                                               validMassege: "password is valid",
+                                               wrongMassege: "password is not valid. Min at least 6 characters, 1 lowercase and uppercase", // сделать подсказку какой пароль
+                                               string: string,
+                                               range: range)
+            
+        case phoneNumberTextField: phoneNumberTextField.text = presenter.setPhoneMask(textField: phoneNumberTextField,
+                                                                            mask: "+X (XXX) XXX-XX-XX",
+                                                                            string: string,
+                                                                            range: range)
+
+        default: break
+        }
+        
+        return false
+    }
 }
 
 
@@ -292,5 +340,9 @@ extension SecondVC: SecondViewProtocol {
         alertOk(title: "Error", massege: "Fill in the all filds")
     }
     
+    func setPhoneLabeText(text: String, color: UIColor) {
+        phoneValidLabel.text = text
+        phoneValidLabel.textColor = color
+    }
    
 }
